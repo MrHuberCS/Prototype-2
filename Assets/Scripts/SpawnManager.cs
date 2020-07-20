@@ -10,21 +10,22 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnPosZ = 20;
     private float spawnRangeX = 15;
+    [SerializeField]
+    private float spawnSpeed = 1.5f;
+    [SerializeField]
+    private float spawnStartTime = 2;
  
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("SpawnRandomAnimal", spawnStartTime, spawnSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomAnimal();
-        }
+     
     }
 
 
